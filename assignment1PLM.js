@@ -54,10 +54,4 @@ function calculations(){
             }
 
 
-
-
-function reset(){
-    
-    document.getElementById("calculatorForm").reset();
-}
                 
