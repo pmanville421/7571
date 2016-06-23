@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+    
+        <title>Company Performance</title>
+        
+        <link rel="stylesheet" type="text/css" href="assignment1PLM.css">
+
+        <script src='assignment1PLM.js'></script>
+            
+        
+        
+    </head>
+    
+    
+    <body>
+        
+        <h1>Company Performance</h1>
+        
+        <p>Please enter the specified values below in the text boxes and then click the "Calculate" button.  Output will be displayed in the bottom fields.
+        </p>
+        
+          <!--Lets grab our data-->
+        
+            <form id="calculatorForm">
+                
+                Profit: $
+                <input type="text" id="profit" name="profit" value="" /><br /><br />
+                
+                Average Number of Shares: 
+                <input type="text" id="avgNumShare" name="avgNumShare" value="" /><br /><br />
+                
+                Price Per Share: $
+                <input type="text" id="pricePerShare" name="pricePerShare" value="" /><br /><br />
+                
+                Intangible Assets: $
+                <input type="text" id="intangibleAssets" name="intangibleAssets" value="" /><br /><br />
+                
+                Total Assets: $
+                <input type="text" id="totalAssets" name="totalAssets" value="" /><br /><br />
+                
+                Liabilities: $
+                <input type="text" id="liabilities" name="liabilities" value="" /><br /><br />
+                
+                Expected Growth Percentage:
+                <input type="text" id="egp" name="egp" value="" /><br /><br />
+                
+                
+                
+                <!--Submit and Reset Buttons-->
+                
+                
+                <input type="button" id="calculate" name="Calculate" value="Calculate" onclick="calculations();" /><br />
+                
+                <input type="button" id="reset" name="Reset" value="Reset" onclick="reset();" /><br />
+                
+                
+                
+                <hr><br />
+                
+                
+                
+                
+                
+                
+                <!--We'll output into these textboxes-->
+                
+                <strong>Earnings Per Share: $</strong>
+                <input type="text" id="eps" name="eps" value="" disabled/><br /><br />
+                
+                <strong>Price to Book: %</strong>
+                <input type="text" id="priceToBook" name="priceToBook" value="" disabled/><br /><br />
+                
+                <strong>PE Ratio: %</strong>
+                <input type="text" id="peRatio" name="peRatio" value="" disabled/><br /><br />
+                
+                <strong>Price to Earnings Growth: %</strong>
+                <input type="text" id="pTeg" name="pTeg" value="" disabled/><br /><br />
+                
+                
+                
+                
+                
+                
+            </form>
+        
+        
+        
+        
+    </body>    
+    
+    
+</html>
