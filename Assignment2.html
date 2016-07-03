@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+    
+    <head>
+    
+        <title>BMI</title>
+        
+        <link rel="stylesheet" type="text/css" href="assignment2.css">
+        
+        <script src='Assignment2.js'></script>
+    
+    </head>
+    
+    <body>
+    
+        <h1>BMI Calculator</h1>
+        
+        <p>Use this form to discover your body mass index (<strong>BMI</strong>).  
+        </p>    
+        <p>Enter your total height (<strong>in.</strong>) and weight (<strong>lbs.</strong>).  Then click the Calculate button.</p>
+        
+        <hr />
+        
+        <form name="measurements">
+        
+            <table>
+                
+                <tr>    
+            
+                    <td>
+                        Please enter your height:
+            
+                    <input type="text" id="height" style="width: 35px;"/> <strong>in.</strong><br /><br />
+                    </td>
+           
+                
+                </tr>    
+                
+            <tr>
+                
+                <td>
+                    
+                    Please enter your weight:
+                    
+                    <input type="text" id="weight" style="width: 35px;"/> <strong>lbs.</strong><br /><br />
+            
+                </td>
+                
+            </tr>
+                
+         </table>    
+            
+            <input type="button" value="Calculate" onclick="calculateBMI();">
+        
+            <input type="reset" value="Reset" onclick="resetMsg()">
+
+            <hr /><br />
+            
+            
+             <!--We'll output into this textbox-->
+                
+                <strong>Your BMI: </strong>
+                <input type="text" id="bmi" name="bmi" value="" style="width: 60px;" disabled/><br /><br />
+            
+    
+            <!--personal message/info-->
+            
+            <div><span id="personalMessage"></span></div>
+            
+            <hr />
+            
+        </form>
+        
+        
+        
+        
+        
+        <h3>BMI Quick Guide</h3>
+        <p>Your BMI range is highlighted</p>
+            <table border="1" style="width:20%">
+  
+                <tr id="a">
+                    <td>Underweight</td>
+                    <td>18.5</td>
+                </tr>
+  
+                
+                
+                <tr id="b">
+                    <td>Normal weight</td>
+                    <td>18.5 - 24.9</td>
+                </tr>
+  
+                
+                
+                <tr id="c">
+                    <td>Overweight</td>
+                    <td>25 - 29</td>
+                </tr>
+
+                
+                
+                <tr id="d">
+                    <td>Obese</td>
+                    <td>30 or more</td>
+                </tr>
+                
+                
+            </table>
+    
+    </body>
+       
+</html>    
