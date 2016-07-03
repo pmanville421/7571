@@ -51,7 +51,7 @@ function calculateBMI(){
 		
 		document.getElementById('c').style.backgroundColor = '#ffff00';
 			
-	} else if {
+	} else {
 		
 		personalMessage.innerHTML =
 		"You are obese.  Individuals with a BMI of 30 or greater are in a physically unhealthy condition, which puts them at risk for serious illnesses such as heart disease, diabetes, high blood pressure, gall bladder disease, and some cancers. This holds especially true if you have a larger than recommended Waist Size. These people would benefit greatly by modifying their lifestyle. Ideally, see your doctor and consider reducing your weight. The reduction will result in considerable health improvements."
