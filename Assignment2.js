@@ -1,10 +1,10 @@
-function calculateBMI(){
+function calculateBMI() {
     
     //get the age value
     
     var height = parseInt(document.getElementById("height").value);
     var weight = parseInt(document.getElementById("weight").value);
-    
+	
     //variable for outputs
     
     var bmi; 
@@ -24,6 +24,16 @@ function calculateBMI(){
     
     bmi = Math.round((weight * 703)/(height * height));
     
+	
+	//validate our data first
+	
+	if( !bmi > 0 || bmi > 500 ) { 
+		
+		alert("Please check that you entered everything correctly and try again.");
+		
+	}
+	
+	else {
 	
     //Output to Textbox
     
@@ -62,7 +72,7 @@ function calculateBMI(){
 	
 }
 
-
+}
 
 //Reset button function
 
@@ -79,40 +89,3 @@ function resetMsg() {
 	
 }
 
-//Check if letter entered 
-
-/*function validate() {
-	
-  var x = document.forms["measurements"]["height"].value;
-	
-  var y = document.forms["measurements"]["weight"].value;	
-	
-  if (x==null || y==null)
-	
-      {
-		  
-      alert("Please check that you entered your measurements correctly and nothing is blank.");
-      return false;
-		  
-      }
-	
-  if (isNaN(x))
-	  
-  {
-    alert("Must input numerical value for Height.");
-	  
-    return false;
-	  
-  }
-	
-if (isNaN(y))
-	  
-  {
-	  
-    alert("Must input a numerical value for Weight.");
-	  
-    return false;
-	  
-  }	
-	
-}*/
