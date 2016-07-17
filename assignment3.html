@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+    
+    <head>
+    
+        <title>Assignment 3</title>
+    
+		<link rel="stylesheet" type="text/css" href="assignment3.css">
+        
+        <script src='Assignment3.js'></script>
+		
+    </head>
+    
+    <body>
+    
+        <h1>Interactive Page</h1>
+		
+		<h2>Averager</h2>
+		
+		<p>Enter a list of numbers into the below field.  Seperate the numbers by a <strong>comma ","</strong>.  Afterwards hit the submit button in this block.</p><p>The average of your input will be displayed in the grayed out textbox below.</p>
+
+		
+		<form name="calculations">
+        
+            <table>
+                
+                <tr>    
+            
+                    <td>
+                        Enter Numbers:
+                    </td>
+					<br />
+					
+           			<td>
+					 <input type="text" id="numbers">
+					</td>
+                
+                </tr>    
+               
+                
+         </table>
+			<br />
+            
+            <input type="button" value="Calculate" onclick="calculateAverage();">
+        
+            <input type="reset" value="Reset">
+
+            <br /><br />
+            
+            
+             <!--We'll output into this textbox-->
+                
+                <strong>Average: </strong>
+                <input type="text" id="average" name="average" value="" style="width: 100px;" disabled/><br /><br />
+            
+            <hr />
+            
+        </form>
+        
+		
+		<hr />
+		
+		<h2>Fun with Lists</h2>
+		
+		<p>Click the buttons below to sort the list in alphabetical order in either regular, or reverse order.</p>
+		
+		
+			
+			<ul id="names">
+				<li> <span id=01> Phillip </span></li>
+				<li> <span id=02> Lawrence </span></li>
+				<li> <span id=03> Manville </span></li>
+				<li> <span id=04> Mathew </span></li>
+				<li> <span id=05> Joseph </span></li>
+				<li> <span id=06> Daniels </span></li>
+			</ul>
+			
+		            <input type="button" value="Sort" onclick="sort();">
+				
+				 <input type="button" value="Reverse Sort" onclick="reverseSort();">
+
+		
+			
+
+    </body>
+       
+</html>    
