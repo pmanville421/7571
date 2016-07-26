@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html>
+    
+    <head>
+    
+		<script type="text/javascript">
+			function memberCalc() {
+    		
+				
+				//input data variables
+				
+				 
+				var number = document.getElementById("flightNum").value;
+				var miles = document.getElementById("flightMi").value;
+				if(!number.trim() || !miles.trim() ){
+					alert("Please enter values!");
+					return false;
+				}
+				if(isNaN(miles)){
+					alert("Please ener an integer for miles");
+					return false;
+				}
+				
+				if(miles < 0){
+					alert("Please enter a positive value for miles.")
+					
+				}
+				
+				//output data variables
+				var results = document.getElementById('results');
+				var member = document.getElementById('member');
+				
+				
+				
+				//create the array
+				var flightArray = [number, miles];
+				
+				
+				
+				//push data into localStorage
+				
+				if(!localStorage.getItem(number)){
+				localStorage.setItem(number, JSON.stringify(flightArray) );
+				
+				
+				//console.log(dataParse);
+				
+				var totalMiles = 0;
+					
+				//Starting framework for table
+				var resultString = "<table><tr><th>Flight Number</th><th>Miles</th></tr>";
+				
+					//Looping through the localStorage keys 
+					for(var i = 0; i < localStorage.length; i++){
+					
+					//retrieve JSON data	
+					var parseData = localStorage.getItem(localStorage.key(i));
+					
+					//parsing(or destringifying) the data	
+					var currentRow = JSON.parse(parseData);
+						
+					//console.log(currentRow);
+					
+					//WRITING TABLE ROWS	
+					resultString += "<tr><td>";
+					resultString += currentRow[0];
+					resultString += "</td><td>";
+					resultString += currentRow[1];
+					resultString += "</td>";
+					
+					totalMiles += parseFloat(currentRow[1]);
+					
+				}
+					
+				//closing table tag	
+				resultString += "</table>";
+				
+				//display table	
+				results.innerHTML = resultString;
+					
+				memberString = "Total Miles: ";	
+				if(totalMiles < 10000){
+					memberString += totalMiles;
+					memberString += "<br> <h3>Bronze Member</h3>";
+				}
+				else if(totalMiles < 25000){
+					memberString += totalMiles;
+					memberString += "<br> <h3>Silver Member</h3>";
+				}
+				else{
+					memberString += totalMiles;
+					memberString += "<br> <h3>Gold Member </h3>";
+				}
+				
+				member.innerHTML = memberString;
+				
+				}else{
+					alert("Flight number already exist! Please enter another id.")
+				}
+				
+				
+				
+				
+				
+				
+					
+			}
+		</script>
+		
+		
+		
+		
+		<style>
+			body {
+    		background-color: lightblue;
+				}
+			h1 {
+    		color: maroon;
+			}
+			
+			th{
+				border: solid 1px;
+				padding-right: 4px;
+			}
+			#member h3{
+				color:red;
+			}
+		</style>
+		
+		
+		
+		
+        <title>Quiz2Q1</title>
+    
+		
+    </head>
+	
+    
+    <body>
+    
+        <h1>Flight Class Categorizer</h1>
+		
+		<h2>Flight Log</h2><hr />
+		
+		<p>This form will determine your membership category.  Enter your flight number and flight miles below.  Then click submit.</p>
+		<p><strong>Note:</strong> The same flight number cannot be used twice.</p>
+		
+		<form name="membership">
+        
+            <p>
+				<label> <strong>Flight ID:</strong></label> 
+				<input type="text" id="flightNum" name="flightNum" value="" /><br /><br />
+				<label> <strong>Flight Miles:</strong></label>
+				<input type="text" id ="flightMi" name="flightMi" value="" /><br/>
+
+</p>
+            
+            <input type="button" value="Submit" onclick="memberCalc();">
+        
+            <!--<input type="reset" value="Reset">-->
+
+            
+			</form>
+			<br /><br />
+            
+            
+          
+            
+            <hr />
+	
+		
+	<section>			
+			
+	<section>		
+		<header><h2>Flight Details</h2><br /></header>
+		<div id ="results"></div>
+	</section>
+
+		
+	
+	</section>
+			
+
+ 	<section>
+	 	<header><h2>Membership Type </h2></header>
+	 	<div id = "member"></div>
+	</section>
+			
+
+    </body>
+       
+</html>    
